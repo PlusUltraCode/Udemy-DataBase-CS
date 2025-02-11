@@ -43,3 +43,23 @@ UPDATE T SET C1 = ‘XX1’ WHERE PK = 1;
 단순한 equal 쿼리의 경우 PostgreSQL이 단일 I/O로 성능이 좋음
 
 그러나 Range Query와 Update Query는 MySQL이 리프 노드의 데이터로 인해 빠름
+
+<br/>
+
+# 병렬 처리
+## MySQL 8
+
+`멀티 스레드` 사용으로 더 낮은 메모리 사용량, 빠른 컨텍스트 스위칭이 장점이다. 이때문에 단일 스레드 성능이 느릴 경우 병목 현상이 발생할 수 있다.
+
+## PostgreSQL 16
+
+`멀티 프로세스` 사용으로 더 나은 격리성과 더 안정적인 병렬 처리가 가능하다. 프로세스로 인한 높은 메모리 사용량과 프로세스 간 통신 오버헤드가 단점이다.
+
+![image](https://github.com/user-attachments/assets/18ada08e-415a-4a03-aedf-160f0997260f)
+
+MySQL은 단일 프로세스로 인해 장애 복구와 컨텍스트 스위칭 오버에드에서 이점을 가진다.
+반면 PostgreSQL은 대규모 시스템에서의 확장성, 대규모 쿼리, 분석에서 이점을 가진다.
+
+
+## 출처
+[MySQL 8 vs. PostgreSQL 16](https://rastalion.dev/mysql-8-0-vs-postgresql-16-%EC%8B%AC%EC%B8%B5-%EB%B9%84%EA%B5%90-%EB%B6%84%EC%84%9D/)

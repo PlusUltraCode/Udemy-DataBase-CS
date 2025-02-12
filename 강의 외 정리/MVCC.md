@@ -173,3 +173,7 @@ Vacuum 후 Dead Tuple이 모두 정리되었고 테이블 조회 속도 또한 �
 
 그러나 이때 알아두어야 할 것은
 Vacuum full이 아닌 단순 Vacuum으로는 물리 디스크로 이미 할당된 크기는 회수 되지 않았다는 점입니다.(경우에 따라 vacuum으로도 회수되는 경우가 있지만 본 글에서는 다루지 않음) 
+
+<br/>
+# 출처
+[MVCC(다중 버전 동시성 제어)란?](https://mangkyu.tistory.com/53)
